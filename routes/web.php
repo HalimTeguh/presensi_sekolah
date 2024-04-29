@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,17 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/presensi', function () {
+    return view('pages/presensi');
+});
+
 Route::get('/login', function () {
     return view('pages/auth/login');
 });
+
+Route::get('/login', function () {
+    return view('pages/auth/login');
+});
+
+Route::resource('siswa', SiswaController::class);
+Route::resource('admin', AdminController::class);
